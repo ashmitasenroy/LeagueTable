@@ -24,7 +24,7 @@ public class UserController {
     public List<Leagues> getAllLeagues() {
         return repo.findAll();
     }
-
+//
     @Autowired
     private LeagueRepository leaguesRepository;
 
