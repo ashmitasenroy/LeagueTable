@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Leagues</title>
+</head>
+<body>
+<h1>Leagues</h1>
+<table border="1">
+    <tr>
+        <th>League Name</th>
+    </tr>
+    <tr th:each="league : ${leagues}">
+        <td><a th:href="@{/tables/{league}(league=${league.leagueName})}" th:text="${league.leagueName}"></a></td>
+    </tr>
+</table>
+</body>
+</html>

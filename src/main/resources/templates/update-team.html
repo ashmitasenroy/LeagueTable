@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Update Team Stats</title>
+</head>
+<body>
+<h1>Update Team Stats</h1>
+<form action="/admin/update-team" method="post">
+    <label>Team Name:
+        <select name="teamId">
+            <option th:each="team : ${teams}" th:value="${team.id}" th:text="${team.teamName}"></option>
+        </select>
+    </label>
+    <label>Points: <input type="number" name="points" required/></label>
+    <label>Games Played: <input type="number" name="gamesPlayed" required/></label>
+    <label>Wins: <input type="number" name="wins" required/></label>
+    <label>Losses: <input type="number" name="losses" required/></label>
+    <label>Draws: <input type="number" name="draws" required/></label>
+    <button type="submit">Update Stats</button>
+</form>
+</body>
+</html>

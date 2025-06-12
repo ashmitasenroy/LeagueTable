@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Team</title>
+</head>
+<body>
+<h1>Add Team to League</h1>
+<form action="/admin/add-team" method="post">
+    <label>League Name:
+        <select name="leagueName">
+            <option th:each="league : ${leagues}" th:value="${league.leagueName}" th:text="${league.leagueName}"></option>
+        </select>
+    </label>
+    <label>Team Name: <input type="text" name="teamName" required/></label>
+    <label>Points: <input type="number" name="points" required/></label>
+    <label>Games Played: <input type="number" name="gamesPlayed" required/></label>
+    <label>Wins: <input type="number" name="wins" required/></label>
+    <label>Losses: <input type="number" name="losses" required/></label>
+    <label>Draws: <input type="number" name="draws" required/></label>
+    <button type="submit">Add Team</button>
+</form>
+</body>
+</html>
